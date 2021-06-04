@@ -1,10 +1,13 @@
+@import '../../variables-mixins';
+
+
 .header {
 	width: 100vw;
 	display: flex;
 	justify-content: center;
-	box-shadow: 0px 6px 7px -6px rgba(0, 0, 0, 0.42);
-
-
+	background-color: $light-mode-elements;
+	@include box-shadow;
+	
 	&-container {
 		width: 87vw;
 		height: 3.5rem;
