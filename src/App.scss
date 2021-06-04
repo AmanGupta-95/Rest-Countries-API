@@ -1,3 +1,5 @@
+@import 'variables-mixins';
+
 * {
 	padding: 0;
 	margin: 0;
@@ -6,4 +8,5 @@
 
 html {
 	font-family: 'Nunito Sans', sans-serif;
+	background-color: $light-mode-background;
 }
