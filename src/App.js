@@ -8,7 +8,15 @@ import './App.scss';
 class App extends React.Component {
 	constructor() {
 		super();
-		this.state = {};
+		this.state = {
+			countries: [],
+		};
+	}
+
+	componentDidMount() {
+		fetch('https://restcountries.eu/rest/v2/all')
+			.then((res) => res.json())
+			.then((data) => this.setState({ countries: data }));
 	}
 
 	render() {
