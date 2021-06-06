@@ -10,3 +10,15 @@ html {
 	font-family: 'Nunito Sans', sans-serif;
 	background-color: $light-mode-background;
 }
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.controllers {
+	width: $width;
+	display: flex;
+	justify-content: space-between;
+	margin: 3rem 0;
+}

@@ -15,7 +15,11 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Header />
-				<SearchBox placeholder={`Search for a country...`} />
+				<div className="container">
+					<div className="controllers">
+						<SearchBox placeholder={`Search for a country...`} />
+					</div>
+				</div>
 			</div>
 		);
 	}
