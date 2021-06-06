@@ -5,7 +5,7 @@ import './search-box.style.scss';
 const SearchBox = ({ placeholder, handleChange }) => (
 	<div className="search-container">
 		<button className="search-icon-btn">
-			<i class="fas fa-search search-icon"></i>
+			<i className="fas fa-search search-icon"></i>
 		</button>
 		<input
 			className="search"
