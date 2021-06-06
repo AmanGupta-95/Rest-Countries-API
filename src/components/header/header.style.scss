@@ -1,15 +1,14 @@
 @import '../../variables-mixins';
 
-
 .header {
 	width: 100vw;
 	display: flex;
 	justify-content: center;
 	background-color: $light-mode-elements;
 	@include box-shadow;
-	
+
 	&-container {
-		width: 87vw;
+		width: $width;
 		height: 3.5rem;
 		display: flex;
 		justify-content: space-between;
