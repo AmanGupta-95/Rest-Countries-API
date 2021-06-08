@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './components/header/header.component';
 import SearchBox from './components/search-box/search-box.component';
 import Dropdown from './components/dropdown/dropdown.component';
+import CardList from './components/card-list/card-list.component';
 
 import './App.scss';
 
@@ -11,7 +12,7 @@ class App extends React.Component {
 		super();
 		this.state = {
 			countries: [],
-			region: 'Asia',
+			region: 'all',
 			searchField: '',
 		};
 	}
@@ -30,13 +31,14 @@ class App extends React.Component {
 		const regions = countries
 			.map((e) => e.region)
 			.filter((e, index, self) => self.indexOf(e) === index && e !== '');
-		const filteredRegion = countries.filter((country) =>
-			country.region.toLowerCase().includes(region.toLowerCase())
-		);
+		let filteredRegion = countries;
+		if (region !== 'all')
+			filteredRegion = countries.filter((country) =>
+				country.region.toLowerCase().includes(region.toLowerCase())
+			);
 		const filterCountries = filteredRegion.filter((country) =>
 			country.name.toLowerCase().includes(searchField.toLowerCase())
 		);
-		console.log(filterCountries);
 		return (
 			<div className="App">
 				<Header />
@@ -52,6 +54,7 @@ class App extends React.Component {
 							handleChange={this.handleRegion}
 						/>
 					</div>
+					<CardList countries={filterCountries} />
 				</div>
 			</div>
 		);
