@@ -12,6 +12,7 @@ function DropDownItem({ title, handleChange }) {
 }
 
 function Dropdown(props) {
+	let count = 0;
 	const [showMenu, setShowMenu] = useState(false);
 	const [initial, setInitial] = useState(true);
 	Dropdown.handleClickOutside = () => setShowMenu(false);
@@ -35,7 +36,11 @@ function Dropdown(props) {
 			`}
 			>
 				{props.regions.map((region) => (
-					<DropDownItem title={region} handleChange={props.handleChange} />
+					<DropDownItem
+						title={region}
+						handleChange={props.handleChange}
+						key={count++}
+					/>
 				))}
 			</div>
 		</div>
