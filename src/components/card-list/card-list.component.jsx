@@ -7,9 +7,8 @@ import './card-list.style.scss';
 const CardList = ({ countries }) => (
 	<div className="cardList-container">
 		{countries.map((country) => (
-			<Card key={country.numericCode} country={country} />
+			<Card key={country.name} country={country} />
 		))}
-		{/* <Card country={countries} /> */}
 	</div>
 );
 
