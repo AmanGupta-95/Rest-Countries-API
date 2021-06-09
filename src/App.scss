@@ -15,16 +15,3 @@ button {
 body {
 	background-color: $light-mode-background;
 }
-
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.controllers {
-	width: $width;
-	display: flex;
-	justify-content: space-between;
-	margin: 3rem 0;
-}
