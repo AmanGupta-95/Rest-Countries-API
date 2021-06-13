@@ -1,0 +1,22 @@
+@import '../../global-style';
+
+.link-btn {
+	width: 6rem;
+	height: 2rem;
+	font-weight: 600;
+	margin-right: 0.5rem;
+	background-color: white;
+	border: none;
+	border-radius: $border-radius;
+	transition: all 0.3s;
+	cursor: pointer;
+	@include box-shadow;
+	&:hover {
+		@include box-shadow-hover;
+		transform: scale(1.03);
+	}
+	.icon {
+		margin-right: 0.5rem;
+		font-size: 1rem;
+	}
+}
