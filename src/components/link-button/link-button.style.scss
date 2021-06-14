@@ -1,8 +1,9 @@
 @import '../../global-style';
 
 .link-btn {
-	width: 6rem;
-	height: 2rem;
+	// width: 6rem;
+	// height: 2rem;
+	padding: 0.5rem 1.2rem;
 	font-weight: 600;
 	margin-right: 0.5rem;
 	background-color: white;
@@ -16,7 +17,7 @@
 		transform: scale(1.03);
 	}
 	.icon {
-		margin-right: 0.5rem;
+		margin-right: 0.8rem;
 		font-size: 1rem;
 	}
 }
