@@ -1,17 +1,27 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 import './link-button.style.scss';
 
-const LinkButton = (props) => {
+function refreshPage() {
+	setTimeout(() => {
+		window.location.reload(false);
+	}, 0);
+	console.log('page to reload');
+}
+
+const LinkButton = ({ value, children, history, match, location }) => {
+	console.log(history, match, location);
 	return (
-		<button className={`link-btn ${props.margin? "margin-right": ""}`}  
-		value={props.value} onClick={props.onClick}
-		
-		>
-			{props.children[0]}
-			{props.children[1]}
-		</button>
+		<Link to={value} onClick={refreshPage}>
+			<button
+				className="link-btn"
+				value={value}
+			>
+				{children}
+			</button>
+		</Link>
 	);
 };
 
-export default LinkButton;
+export default withRouter(LinkButton);
