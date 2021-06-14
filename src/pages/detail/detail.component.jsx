@@ -33,18 +33,15 @@ class Details extends React.Component {
 			});
 	}
 
-	handleClick = (e) => {
-		this.props.history.push(e.target.value);
-	};
+	
 
 	render() {
 		const { country, borders } = this.state;
 		if (country !== '') {
-			console.log(borders);
 			return (
 				<div className="detail-container">
 					<div className="detail-back-btn">
-						<LinkButton value="/" onClick={this.handleClick}>
+						<LinkButton value="/">
 							<i className="fas fa-long-arrow-alt-left icon"></i> Back
 						</LinkButton>
 					</div>
@@ -93,7 +90,7 @@ class Details extends React.Component {
 								<p className="border-text">Border Countries:</p>
 								<span className="border-btn">
 									{borders.map((border, index) => (
-										<LinkButton key={index} value={border} onClick={this.handleClick}>
+										<LinkButton key={index} value={border}>
 											{border}
 										</LinkButton>
 									))}
