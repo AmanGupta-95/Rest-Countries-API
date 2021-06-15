@@ -13,7 +13,7 @@ class Details extends React.Component {
 		};
 	}
 
-	async componentDidMount() {
+	fetchData = () => {
 		const { name } = this.props.match.params;
 		fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
 			.then((res) => res.json())
@@ -22,6 +22,7 @@ class Details extends React.Component {
 				return data[0].borders;
 			})
 			.then((country) => {
+				this.setState({ borders: [] });
 				for (let i = 0; i < country.length; i++) {
 					if (i > 2) break;
 					fetch(`https://restcountries.eu/rest/v2/alpha/${country[i]}`)
@@ -31,9 +32,16 @@ class Details extends React.Component {
 						);
 				}
 			});
+	};
+
+	componentDidMount() {
+		this.fetchData();
 	}
 
-	
+	componentDidUpdate(prevProps) {
+		if (this.props.match.params.name !== prevProps.match.params.name)
+			this.fetchData();
+	}
 
 	render() {
 		const { country, borders } = this.state;
