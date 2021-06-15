@@ -45,6 +45,8 @@ class Details extends React.Component {
 
 	render() {
 		const { country, borders } = this.state;
+		const { history } = this.props;
+		console.log(history);
 		if (country !== '') {
 			return (
 				<div className="detail-container">
@@ -94,16 +96,20 @@ class Details extends React.Component {
 									</p>
 								</div>
 							</div>
-							<div className="border">
-								<p className="border-text">Border Countries:</p>
-								<span className="border-btn">
-									{borders.map((border, index) => (
-										<LinkButton key={index} value={border}>
-											{border}
-										</LinkButton>
-									))}
-								</span>
-							</div>
+							{borders.length > 1 ? (
+								<div className="border">
+									<p className="border-text">Border Countries:</p>
+									<span className="border-btn">
+										{borders.map((border, index) => (
+											<LinkButton key={index} value={border}>
+												{border}
+											</LinkButton>
+										))}
+									</span>
+								</div>
+							) : (
+								<div></div>
+							)}
 						</div>
 					</div>
 				</div>
