@@ -3,7 +3,6 @@
 .header {
 	display: flex;
 	justify-content: center;
-	background-color: $light-mode-elements;
 	@include box-shadow;
 
 	&-container {
@@ -15,11 +14,14 @@
 
 		.title {
 			font-size: 1.5rem;
+			cursor: pointer;
 		}
 
-		.dark-mode {
+		.dark-mode-btn {
 			padding-top: 0.3rem;
 			font-weight: 600;
+			cursor: pointer;
+			user-select: none;
 		}
 	}
 }

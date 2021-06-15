@@ -10,7 +10,6 @@
 		display: flex;
 		justify-content: space-between;
 		border: none;
-		background-color: white;
 		border-radius: $border-radius;
 		cursor: pointer;
 		@include box-shadow;
@@ -30,7 +29,6 @@
 		text-align: left;
 		padding: 0.5rem 1rem;
 		border: none;
-		background-color: white;
 		cursor: pointer;
 		transition: all 0.3s;
 

@@ -7,8 +7,8 @@ import CardList from '../../components/card-list/card-list.component';
 import './homepage.style.scss';
 
 class HomePage extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			countries: [],
 			region: 'all',
@@ -26,6 +26,8 @@ class HomePage extends React.Component {
 	handleSearch = (e) => this.setState({ searchField: e.target.value });
 
 	render() {
+		console.log(this.props);
+		const { theme } = this.props;
 		const { countries, region, searchField } = this.state;
 		const regions = countries
 			.map((e) => e.region)
@@ -40,20 +42,21 @@ class HomePage extends React.Component {
 		);
 		return (
 			<div className="App">
-				
-				<div className="container">
+				<div className={`container ${theme}-background`}>
 					<div className="controllers">
 						<SearchBox
 							placeholder={`Search for a country...`}
 							handleChange={this.handleSearch}
+							theme={theme}
 						/>
 						<Dropdown
 							regions={regions}
 							title="Filter by region"
 							handleChange={this.handleRegion}
+							theme={theme}
 						/>
 					</div>
-					<CardList countries={filterCountries} />
+					<CardList countries={filterCountries} theme={theme}/>
 				</div>
 			</div>
 		);

@@ -45,19 +45,18 @@ class Details extends React.Component {
 
 	render() {
 		const { country, borders } = this.state;
-		const { history } = this.props;
-		console.log(history);
+		const { theme } = this.props;
 		if (country !== '') {
 			return (
-				<div className="detail-container">
+				<div className={`detail-container ${theme}-background`}>
 					<div className="detail-back-btn">
-						<LinkButton value="/">
+						<LinkButton value="/" theme={theme}>
 							<i className="fas fa-long-arrow-alt-left icon"></i> Back
 						</LinkButton>
 					</div>
 					<div className="detail-stats">
 						<img className="detail-flag" alt="Flag" src={country.flag} />
-						<div className="detail-text-container">
+						<div className={`detail-text-container ${theme}-text`}>
 							<h1 className="heading">{country.name}</h1>
 							<div className="detail-text">
 								<div className="left">
@@ -101,7 +100,7 @@ class Details extends React.Component {
 									<p className="border-text">Border Countries:</p>
 									<span className="border-btn">
 										{borders.map((border, index) => (
-											<LinkButton key={index} value={border}>
+											<LinkButton key={index} value={border} theme={theme}>
 												{border}
 											</LinkButton>
 										))}

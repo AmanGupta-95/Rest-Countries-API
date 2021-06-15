@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './header.style.scss';
 
-const Header = () => (
-	<div className="header">
+const Header = ({ handleDarkClick, theme }) => (
+	<div className={`header ${theme}`}>
 		<div className="header-container">
-			<h1 className="title">Where in the world?</h1>
-			<p className="dark-mode">
+			<Link to="/" className="link">
+				<h1 className={`title ${theme}`}>Where in the world?</h1>
+			</Link>
+			<p className="dark-mode-btn" onClick={handleDarkClick}>
 				<i className="far fa-moon"></i> Dark Mode
 			</p>
 		</div>

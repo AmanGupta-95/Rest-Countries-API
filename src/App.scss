@@ -1,4 +1,4 @@
-@import 'global-style';
+@import './global-style';
 
 * {
 	padding: 0;
@@ -10,8 +10,4 @@ html,
 input,
 button {
 	font-family: 'Nunito Sans', sans-serif;
-}
-
-body {
-	background-color: $light-mode-background;
 }

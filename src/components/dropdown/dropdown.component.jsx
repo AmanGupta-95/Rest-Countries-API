@@ -3,9 +3,13 @@ import onClickOutside from 'react-onclickoutside';
 
 import './dropdown.style.scss';
 
-function DropDownItem({ title, handleChange }) {
+function DropDownItem({ title, handleChange, theme }) {
 	return (
-		<button className="dropdown-item" value={`${title}`} onClick={handleChange}>
+		<button
+			className={`dropdown-item ${theme}`}
+			value={`${title}`}
+			onClick={handleChange}
+		>
 			{title}
 		</button>
 	);
@@ -25,7 +29,7 @@ function Dropdown(props) {
 
 	return (
 		<div className="dropdown-container">
-			<button onClick={toggle} className="dropdown-btn">
+			<button onClick={toggle} className={`dropdown-btn ${props.theme}`}>
 				<span>{props.title}</span>
 				<i className="fas fa-chevron-down"></i>
 			</button>
@@ -40,6 +44,7 @@ function Dropdown(props) {
 						title={region}
 						handleChange={props.handleChange}
 						key={count++}
+						theme={props.theme}
 					/>
 				))}
 			</div>
