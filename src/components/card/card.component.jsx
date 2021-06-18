@@ -5,7 +5,7 @@ import './card.style.scss';
 
 const Card = ({ country, theme }) => {
 	return (
-		<Link to={`/${country.name}`} className="link">
+		<Link to={`/Rest-Countries-API/${country.name}`} className="link">
 			<div className={`card-container ${theme}`}>
 				<img className="card-flag" alt="flag" src={country.flag} />
 				<div className="card-description">
