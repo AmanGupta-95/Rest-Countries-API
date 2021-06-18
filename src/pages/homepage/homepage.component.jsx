@@ -42,7 +42,7 @@ class HomePage extends React.Component {
 		);
 		return (
 			<div className="App">
-				<div className={`container ${theme}-background`}>
+				<div className={`container`}>
 					<div className="controllers">
 						<SearchBox
 							placeholder={`Search for a country...`}

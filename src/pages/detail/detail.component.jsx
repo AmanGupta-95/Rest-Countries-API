@@ -48,7 +48,7 @@ class Details extends React.Component {
 		const { theme } = this.props;
 		if (country !== '') {
 			return (
-				<div className={`detail-container ${theme}-background`}>
+				<div className={`detail-container`}>
 					<div className="detail-back-btn">
 						<LinkButton value="/" theme={theme}>
 							<i className="fas fa-long-arrow-alt-left icon"></i> Back
