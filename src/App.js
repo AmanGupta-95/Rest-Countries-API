@@ -26,9 +26,13 @@ const App = () => {
 		<Router>
 			<Header handleDarkClick={handleDarkClick} theme={theme} />
 			<Switch>
-				<Route exact path="/" render={() => <HomePage theme={theme} />} />
 				<Route
-					path="/:name"
+					exact
+					path="/Rest-Countries-API"
+					render={() => <HomePage theme={theme} />}
+				/>
+				<Route
+					path="/Rest-Countries-API/:name"
 					render={(props) => <Details {...props} theme={theme} />}
 				/>
 			</Switch>
