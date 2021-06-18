@@ -26,7 +26,6 @@ class HomePage extends React.Component {
 	handleSearch = (e) => this.setState({ searchField: e.target.value });
 
 	render() {
-		console.log(this.props);
 		const { theme } = this.props;
 		const { countries, region, searchField } = this.state;
 		const regions = countries
