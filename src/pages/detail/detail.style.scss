@@ -31,6 +31,7 @@
 	&-flag {
 		width: 25rem;
 		height: 22rem;
+		object-fit: cover;
 	}
 
 	&-text-container {
@@ -61,6 +62,44 @@
 				margin-left: 3px;
 				font-weight: 300;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.detail {
+		&-stats,
+		&-text {
+			width: $width;
+			flex-direction: column;
+		}
+
+		&-flag {
+			width: 100%;
+		}
+
+		&-text {
+			.right {
+				margin-top: 2rem;
+			}
+			.left{
+				margin-top: -1rem;
+			}
+		}
+
+
+	}
+	.text{
+		margin-top: 0.8rem;
+	}
+
+	.border{
+		width: $width;
+		flex-direction: column;
+
+		&-btn{
+			margin: 2rem 0 !important;
+			display: flex;
 		}
 	}
 }

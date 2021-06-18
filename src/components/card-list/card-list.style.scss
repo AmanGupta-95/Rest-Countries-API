@@ -9,3 +9,9 @@
 		grid-gap: 4.6rem;
 	}
 }
+
+@media screen and (max-width: 370px) {
+	.cardList-container{
+		justify-content: center;
+	}
+}
