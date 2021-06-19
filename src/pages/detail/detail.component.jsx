@@ -50,7 +50,7 @@ class Details extends React.Component {
 			return (
 				<div className={`detail-container`}>
 					<div className="detail-back-btn">
-						<LinkButton value="/" theme={theme}>
+						<LinkButton value="/Rest-Countries-API" theme={theme}>
 							<i className="fas fa-long-arrow-alt-left icon"></i> Back
 						</LinkButton>
 					</div>
@@ -100,7 +100,7 @@ class Details extends React.Component {
 									<p className="border-text">Border Countries:</p>
 									<span className="border-btn">
 										{borders.map((border, index) => (
-											<LinkButton key={index} value={border} theme={theme}>
+											<LinkButton key={index} value={`/Rest-Countries-API/${border}`} theme={theme}>
 												{border}
 											</LinkButton>
 										))}
