@@ -12,8 +12,14 @@ button {
 	font-family: 'Nunito Sans', sans-serif;
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: $width-mobile) {
 	html {
-		font-size: 12px;
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: $width-laptop) {
+	html {
+		font-size: 14px;
 	}
 }

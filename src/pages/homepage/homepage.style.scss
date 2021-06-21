@@ -14,8 +14,8 @@
 	margin: 3rem 0;
 }
 
-@media screen and (max-width: 370px) {
-	.controllers{
+@media screen and (max-width: $width-mobile) {
+	.controllers {
 		flex-direction: column;
 	}
 }

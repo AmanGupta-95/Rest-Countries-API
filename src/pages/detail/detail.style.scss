@@ -66,7 +66,7 @@
 	}
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: $width-mobile) {
 	.detail {
 		&-stats,
 		&-text {
@@ -82,22 +82,35 @@
 			.right {
 				margin-top: 2rem;
 			}
-			.left{
+			.left {
 				margin-top: -1rem;
 			}
 		}
-
-
 	}
-	.text{
+	.text {
 		margin-top: 0.8rem;
 	}
 
-	.border{
+	.border {
 		width: $width;
 		flex-direction: column;
 
-		&-btn{
+		&-btn {
+			margin: 2rem 0 !important;
+			display: flex;
+		}
+	}
+}
+
+@media screen and (max-width: $width-laptop) {
+	.heading{
+		margin-top: 0 !important;
+	}
+	.border {
+		width: $width;
+		flex-direction: column;
+
+		&-btn {
 			margin: 2rem 0 !important;
 			display: flex;
 		}

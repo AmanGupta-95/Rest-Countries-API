@@ -10,7 +10,7 @@
 	}
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: $width-mobile) {
 	.cardList-container{
 		justify-content: center;
 	}

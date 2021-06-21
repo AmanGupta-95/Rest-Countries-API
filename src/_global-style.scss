@@ -6,6 +6,9 @@ $light-mode-background: hsl(0, 0%, 98%);
 $light-mode-elements: hsl(0, 0%, 100%);
 
 $width: 87vw;
+$width-mobile: 500px;
+$width-laptop: 1024px;
+
 $border-radius: 5px;
 
 @mixin box-shadow {
