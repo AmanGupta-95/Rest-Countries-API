@@ -49,7 +49,7 @@
 
 @media screen and (max-width: $width-mobile) {
 	.search {
-		width: 24rem !important;
+		width: $width !important;
 		font-size: 1rem !important;
 	}
 }
