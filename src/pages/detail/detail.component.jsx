@@ -10,6 +10,7 @@ class Details extends React.Component {
 		this.state = {
 			borders: [],
 			country: '',
+			visited: [''],
 		};
 	}
 
@@ -18,7 +19,9 @@ class Details extends React.Component {
 		fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
 			.then((res) => res.json())
 			.then((data) => {
-				this.setState({ country: data[0] });
+				this.setState({
+					country: data[0],
+				});
 				return data[0].borders;
 			})
 			.then((country) => {
@@ -43,14 +46,30 @@ class Details extends React.Component {
 			this.fetchData();
 	}
 
+	handleBackBtn = (e) => {
+		let temp = [...this.state.visited];
+		temp.pop();
+		this.setState({ visited: [...temp] });
+	};
+
+	handleBorderButton = (e) => {
+		this.setState({
+			visited: [...this.state.visited, this.state.country.name],
+		});
+	};
+
 	render() {
-		const { country, borders } = this.state;
+		const { country, borders, visited } = this.state;
 		const { theme } = this.props;
 		if (country !== '') {
 			return (
 				<div className={`detail-container`}>
 					<div className="detail-back-btn">
-						<LinkButton value="/Rest-Countries-API" theme={theme}>
+						<LinkButton
+							value={`/Rest-Countries-API/${visited[visited.length - 1]}`}
+							handleClick={this.handleBackBtn}
+							theme={theme}
+						>
 							<i className="fas fa-long-arrow-alt-left icon"></i> Back
 						</LinkButton>
 					</div>
@@ -100,7 +119,12 @@ class Details extends React.Component {
 									<p className="border-text">Border Countries:</p>
 									<span className="border-btn">
 										{borders.map((border, index) => (
-											<LinkButton key={index} value={`/Rest-Countries-API/${border}`} theme={theme}>
+											<LinkButton
+												key={index}
+												value={`/Rest-Countries-API/${border}`}
+												theme={theme}
+												handleClick={this.handleBorderButton}
+											>
 												{border}
 											</LinkButton>
 										))}
