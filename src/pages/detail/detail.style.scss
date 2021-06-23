@@ -68,6 +68,9 @@
 
 @media screen and (max-width: $width-mobile) {
 	.detail {
+		&-text-container{
+			margin-top: 2.5rem;
+		}
 		&-stats,
 		&-text {
 			width: $width;
