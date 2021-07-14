@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LinkButton from '../../components/link-button/link-button.component';
+import LoadingScreen from '../../components/loading-screen/loading-screen.component';
 
 import './detail.style.scss';
 
@@ -11,16 +12,19 @@ class Details extends React.Component {
 			borders: [],
 			country: '',
 			visited: [''],
+			loading: true,
 		};
 	}
 
 	fetchData = () => {
 		const { name } = this.props.match.params;
+		this.setState({ loading: true });
 		fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
 			.then((res) => res.json())
 			.then((data) => {
 				this.setState({
 					country: data[0],
+					loading: false,
 				});
 				return data[0].borders;
 			})
@@ -59,10 +63,12 @@ class Details extends React.Component {
 	};
 
 	render() {
-		const { country, borders, visited } = this.state;
+		const { country, borders, visited, loading } = this.state;
 		const { theme } = this.props;
 		if (country !== '') {
-			return (
+			return loading ? (
+				<LoadingScreen />
+			) : (
 				<div className={`detail-container`}>
 					<div className="detail-back-btn">
 						<LinkButton

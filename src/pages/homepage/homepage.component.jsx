@@ -3,6 +3,7 @@ import React from 'react';
 import SearchBox from '../../components/search-box/search-box.component';
 import Dropdown from '../../components/dropdown/dropdown.component';
 import CardList from '../../components/card-list/card-list.component';
+import LoadingScreen from '../../components/loading-screen/loading-screen.component';
 
 import './homepage.style.scss';
 
@@ -13,13 +14,15 @@ class HomePage extends React.Component {
 			countries: [],
 			region: 'all',
 			searchField: '',
+			loading: true,
 		};
 	}
 
 	componentDidMount() {
+		this.setState({ loading: true });
 		fetch('https://restcountries.eu/rest/v2/all')
 			.then((res) => res.json())
-			.then((data) => this.setState({ countries: data }));
+			.then((data) => this.setState({ countries: data, loading: false }));
 	}
 
 	handleRegion = (e) => this.setState({ region: e.target.value });
@@ -41,22 +44,26 @@ class HomePage extends React.Component {
 		);
 		return (
 			<div className="App">
-				<div className={`container`}>
-					<div className="controllers">
-						<SearchBox
-							placeholder={`Search for a country...`}
-							handleChange={this.handleSearch}
-							theme={theme}
-						/>
-						<Dropdown
-							regions={regions}
-							title="Filter by region"
-							handleChange={this.handleRegion}
-							theme={theme}
-						/>
+				{this.state.loading ? (
+					<LoadingScreen />
+				) : (
+					<div className={`container`}>
+						<div className="controllers">
+							<SearchBox
+								placeholder={`Search for a country...`}
+								handleChange={this.handleSearch}
+								theme={theme}
+							/>
+							<Dropdown
+								regions={regions}
+								title="Filter by region"
+								handleChange={this.handleRegion}
+								theme={theme}
+							/>
+						</div>
+						<CardList countries={filterCountries} theme={theme} />
 					</div>
-					<CardList countries={filterCountries} theme={theme}/>
-				</div>
+				)}
 			</div>
 		);
 	}
