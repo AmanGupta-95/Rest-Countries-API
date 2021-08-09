@@ -7,8 +7,8 @@ This is a [Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countr
 You can click [here](https://yeahitsaman.github.io/Rest-Countries-API/) for live preview of the website or you can download the project and follow the steps:
 1. Open terminal
 2. Change directory to the downloaded project
-3. Type `npm intall` in the terminal
-4. After the installation is complete type `npm start` in the terminal
+3. Type `npm intall`
+4. After the installation is complete type `npm start`
    
 ## 🐱‍💻 Technologies Learned
 1. React
