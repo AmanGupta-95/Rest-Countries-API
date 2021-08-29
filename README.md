@@ -10,7 +10,7 @@ You can click [here](https://yeahitsaman.github.io/Rest-Countries-API/) for live
 3. Type `npm intall`
 4. After the installation is complete type `npm start`
    
-## 🐱‍💻 Technologies Learned
+## 🐱‍💻 Technologies Used
 1. React
 2. React-Router-Dom
 3. Sass
