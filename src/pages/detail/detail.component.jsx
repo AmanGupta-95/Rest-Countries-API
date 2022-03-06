@@ -19,7 +19,7 @@ class Details extends React.Component {
 	fetchData = () => {
 		const { name } = this.props.match.params;
 		this.setState({ loading: true });
-		fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
+		fetch(`https://restcountries.com/v2/name/${name}?fullText=true`)
 			.then((res) => res.json())
 			.then((data) => {
 				this.setState({
@@ -30,9 +30,11 @@ class Details extends React.Component {
 			})
 			.then((country) => {
 				this.setState({ borders: [] });
+				console.log(country);
+				// if (country && country.length)
 				for (let i = 0; i < country.length; i++) {
 					if (i > 2) break;
-					fetch(`https://restcountries.eu/rest/v2/alpha/${country[i]}`)
+					fetch(`https://restcountries.com/v2/alpha/${country[i]}`)
 						.then((res) => res.json())
 						.then((data) =>
 							this.setState({ borders: [...this.state.borders, data.name] })
