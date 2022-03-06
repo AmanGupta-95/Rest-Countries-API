@@ -20,7 +20,7 @@ class HomePage extends React.Component {
 
 	componentDidMount() {
 		this.setState({ loading: true });
-		fetch('https://restcountries.eu/rest/v2/all')
+		fetch('https://restcountries.com/v2/all')
 			.then((res) => res.json())
 			.then((data) => this.setState({ countries: data, loading: false }));
 	}
