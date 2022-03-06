@@ -30,8 +30,6 @@ class Details extends React.Component {
 			})
 			.then((country) => {
 				this.setState({ borders: [] });
-				console.log(country);
-				// if (country && country.length)
 				for (let i = 0; i < country.length; i++) {
 					if (i > 2) break;
 					fetch(`https://restcountries.com/v2/alpha/${country[i]}`)
